@@ -6,6 +6,6 @@
 #include "logger.h"
 
 
-TEST(SAMPLE,SAMPLE1) {
+TEST(SAMPLE,SAMPLE0) {
     EXPECT_EQ(true,true);
 }
