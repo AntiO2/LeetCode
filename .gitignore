@@ -241,4 +241,4 @@ docs/dev
 .cache
 
 # Submission zip files
-# *.zip
+*.zip
