@@ -5,7 +5,21 @@
 #include "gtest/gtest.h"
 #include "logger.h"
 
+class Solution{};
 
-TEST(SAMPLE,SAMPLE0) {
+class test: public testing::Test {
+private:
+    Solution s;
+protected:
+    void SetUp() override {
+        Test::SetUp();
+    }
+
+    void TearDown() override {
+        Test::TearDown();
+    }
+};
+
+TEST_F(test,SAMPLE1) {
     EXPECT_EQ(true,true);
 }
