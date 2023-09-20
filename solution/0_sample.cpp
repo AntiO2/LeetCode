@@ -5,21 +5,12 @@
 #include "gtest/gtest.h"
 #include "logger.h"
 
-class Solution{};
+class Solution{}; // fill in it
 
-class test: public testing::Test {
-public:
+TEST(test,SAMPLE1) {
     Solution s;
-protected:
-    void SetUp() override {
-        Test::SetUp();
-    }
+}
 
-    void TearDown() override {
-        Test::TearDown();
-    }
-};
-
-TEST_F(test,SAMPLE1) {
-    EXPECT_EQ(true,true);
+TEST(test,SAMPLE2) {
+    Solution s;
 }
