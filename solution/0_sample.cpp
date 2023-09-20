@@ -8,7 +8,7 @@
 class Solution{};
 
 class test: public testing::Test {
-private:
+public:
     Solution s;
 protected:
     void SetUp() override {
