@@ -7,10 +7,10 @@
 
 class Solution{}; // fill in it
 
-TEST(test,SAMPLE1) {
+TEST(test0,SAMPLE1) {
     Solution s;
 }
 
-TEST(test,SAMPLE2) {
+TEST(test0,SAMPLE2) {
     Solution s;
 }
