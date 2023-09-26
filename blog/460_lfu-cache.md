@@ -122,4 +122,88 @@ TEST(test460,SAMPLE1) {
 
 ## to be vega
 
-考虑到list的特殊性，是根据离散的点(1,2,3,4...)，所以可以将频率作为map的键，来快速找到一个相同的
+考虑到list的特殊性，是根据离散的点(1,2,3,4...)，所以可以将频率作为map的键，来快速找到一个相同的频率列表。比如当前的一个key访问了两次，然后更新后需要找到3的频率，之前是通过二分查找找到3的开始的地方，现在是通过map查找。
+
+
+
+```c++
+std::unordered_map <int,std::list< frame_t>::iterator> key_pos_; // 记录key在list中的位置
+std::unordered_map<int, std::list<frame_t>> freq_map_;
+
+/**
+ * 从iter的下一个位置开始，找到根据count应该插入frame的位置
+ * @param iter
+ *
+ */
+auto insert_frame(frame_t frame) -> std::list< frame_t>::iterator {
+    const auto &count = frame.count;
+    auto frame_list = freq_map_.find(count);
+    if(frame_list==freq_map_.end()) {
+        // 之前没有这个频率
+        frame_list = freq_map_.emplace(count,std::list<frame_t>{}).first;
+        frame_list->second.emplace_back(frame);
+        return frame_list->second.begin();
+    } else {
+        frame_list->second.emplace_back(frame);
+        return std::prev(frame_list->second.end());
+    }
+}
+```
+
+然后每次put和get时，替换对应的操作
+
+```C++
+public:
+    LFUCache(int capacity):capacity_(capacity){};
+    int get(int key) {
+        auto iter = key_pos_.find(key);
+        if(iter==key_pos_.end()) {
+            return -1;
+        }
+        auto count = iter->second->count;
+        auto value = iter->second->value;
+        auto& old_list = freq_map_.find(count)->second;
+        old_list.erase(iter->second);
+        if(old_list.empty()&&count==min_freq_) {
+            ++min_freq_;
+        }
+        frame_t f{.key = key,.value=value, .count = ++count};
+        auto new_iter = insert_frame(f);
+        key_pos_[key] = new_iter;
+        return value;
+    }
+
+    void put(int key, int value) {
+        auto iter = key_pos_.find(key);
+        if(iter== key_pos_.end()) {
+            // 如果之前没有这个键
+            if(key_pos_.size() < capacity_) {
+                // 还没有满。
+                frame_t f{.key=key,.value=value,.count=1};
+                auto new_iter = insert_frame(f);
+                key_pos_[key] = new_iter;
+            } else {
+                auto& pop_iter = freq_map_[min_freq_];
+                key_pos_.erase(pop_iter.front().key);
+                pop_iter.pop_front();
+                frame_t f{.key=key,.value=value,.count=1};
+                auto new_iter = insert_frame(f);
+                key_pos_[key] = new_iter;
+            }
+            min_freq_ = 1;
+        } else {
+            // 如果之前有这个键，更新值。
+            auto count = iter->second->count;
+            auto&old_list = freq_map_.find(count)->second;
+            old_list.erase(iter->second);
+            if(old_list.empty()&&count==min_freq_) {
+                ++min_freq_;
+            }
+            frame_t f{.key = key,.value=value, .count = ++count};
+            auto new_iter = insert_frame(f);
+            key_pos_[key] = new_iter;
+        }
+    }
+};
+```
+

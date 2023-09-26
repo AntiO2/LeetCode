@@ -1,6 +1,7 @@
 //
 // Created by Anti
 //
+#include <list>
 #include "fmt/core.h"
 #include "gtest/gtest.h"
 #include "logger.h"
@@ -13,4 +14,10 @@ TEST(test0,SAMPLE1) {
 
 TEST(test0,SAMPLE2) {
     Solution s;
+}
+
+TEST(test0,SAMPLE3) {
+    std::list<int > list = {1,3,5,7,9};
+    list.insert(list.end(),2);
+    EXPECT_EQ(list.size(),6);
 }
