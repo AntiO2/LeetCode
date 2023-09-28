@@ -52,3 +52,17 @@ TEST(test2251,SAMPLE2) {
     auto ans = std::vector<int>{2,2,1};
     EXPECT_EQ(s.fullBloomFlowers(flowers,people), ans);
 }
+
+TEST(test2251,SAMPLE3) {
+    auto a = std::vector<int>{0,1,2,3,4,5};
+    auto b = std::vector<int>{0,1,2,3,4,5};
+    std::for_each(a.begin(),a.end(),[&,b](int i)mutable {
+        b[i]++;
+    });
+
+    std::cout<<std::endl;
+    for(auto &x:b) {
+        std::cout<<x<<" ";
+    }
+    std::cout<<std::endl;
+}
