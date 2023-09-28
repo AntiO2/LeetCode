@@ -9,9 +9,9 @@
 时间复杂度应该是
 $$
 \begin{aligned}
-\Omicron(&mlogm&[对people进行排序]\\
-+&nlogn&[对flower进行差分数组维护]\\
-+&nlogn&[遍历一次map（差分数组）])
+\Omicron (&mlogm&&	[对people进行排序]\\
++&nlogn&&		[对flower进行差分数组维护]\\
++&nlogn&&[遍历一次map（差分数组）])
 \end{aligned}
 $$
 其中m和n的规模都是$5*10^4$,但是第一次代码提交上去就是超时了。
