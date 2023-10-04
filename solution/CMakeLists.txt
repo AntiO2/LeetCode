@@ -1,6 +1,6 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/deps/fmt/include)
-
+include_directories(${PROJECT_SOURCE_DIR}/deps)
 enable_testing()
 include(GoogleTest)
 
