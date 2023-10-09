@@ -1,4 +1,4 @@
-# [LeetCode] 滑动窗口 438_find-all-anagrams-in-a-string.cpp
+# [LeetCode] 滑动窗口 438_find-all-anagrams-in-a-string
 
 ## 题目
 
@@ -134,4 +134,6 @@ TEST(test438,SAMPLE2) {
 
 官方题解的优化：
 
-可以通过存储s子串和p每个字母出现次数的差额，并维护一个diff
+可以通过存储s子串和p每个字母出现次数的差额，并维护一个diff，表示有差异的字母个数。
+
+这样就能降低$\Theta(f(\text{判断指定子串是否为异位词}))$
