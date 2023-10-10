@@ -10,9 +10,9 @@
 // https://en.cppreference.com/w/cpp/preprocessor/replace#Predefined_macros
 static_assert(__cplusplus >= 201402L, "expect C++ 2014 for nvcc");
 
+#include <cuda.h>
 #include <fmt/core.h>
 
-#include <cuda.h>
 #include <iostream>
 
 extern auto make_message_cpp() -> std::string;

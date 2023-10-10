@@ -103,7 +103,7 @@ extern "C++" {
 
 // gcc doesn't yet implement private module fragments
 #if !FMT_GCC_VERSION
-module : private;
+module :private;
 #endif
 
 #include "format.cc"

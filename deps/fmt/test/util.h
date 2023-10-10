@@ -77,5 +77,6 @@ class date {
   int day() const { return day_; }
 };
 
-// Returns a locale with the given name if available or classic locale otherwise.
+// Returns a locale with the given name if available or classic locale
+// otherwise.
 std::locale get_locale(const char* name, const char* alt_name = nullptr);

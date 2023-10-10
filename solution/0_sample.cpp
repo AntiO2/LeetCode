@@ -1,17 +1,17 @@
 //
 // Created by Anti
 //
-#include <list>
 #include "fmt/core.h"
-#include "gtest/gtest.h"
 #include "logger.h"
+#include "gtest/gtest.h"
+#include <list>
 
-class Solution{}; // fill in it
+class Solution {};// fill in it
 
-TEST(test0,SAMPLE1) {
+TEST(test0, SAMPLE1) {
     Solution s;
 }
 
-TEST(test0,SAMPLE2) {
+TEST(test0, SAMPLE2) {
     Solution s;
 }

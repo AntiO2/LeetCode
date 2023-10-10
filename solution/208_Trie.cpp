@@ -6,8 +6,7 @@
 #include <string>
 using std::map;
 using std::string;
-class TrieNode
-{
+class TrieNode {
 private:
     map<char, TrieNode *> children;
     char key;
@@ -15,50 +14,39 @@ private:
 
 public:
     TrieNode(char c) : key(c), end_(false){};
-    TrieNode *GetByKey(char key_)
-    {
+    TrieNode *GetByKey(char key_) {
         auto it = children.find(key_);
-        if (it == children.cend())
-        {
+        if (it == children.cend()) {
             return nullptr;
         }
         return it->second;
     }
-    char GetKey()
-    {
+    char GetKey() {
         return key;
     }
-    void AddChild(char key_)
-    {
+    void AddChild(char key_) {
         children[key_] = new TrieNode(key_);
     }
-    bool IsEnd()
-    {
+    bool IsEnd() {
         return end_;
     }
-    void SetEnd(bool end)
-    {
+    void SetEnd(bool end) {
         end_ = end;
     }
 };
-class Trie
-{
+class Trie {
 public:
-    Trie()
-    {
+    Trie() {
         root_ = new TrieNode('\0');
     }
 
-    void insert(string word)
-    {
+    void insert(string word) {
         auto current = root_;
         auto length = word.length();
         decltype(length) now = 0;
-        while (now < length)
-        {
+        while (now < length) {
             auto child = current->GetByKey(word[now]);
-            if (child == nullptr)
-            {
+            if (child == nullptr) {
                 current->AddChild(word[now]);
             }
             current = current->GetByKey(word[now]);
@@ -67,16 +55,13 @@ public:
         current->SetEnd(true);
     }
 
-    bool search(string word)
-    {
+    bool search(string word) {
         auto current = root_;
         auto length = word.length();
         decltype(length) now = 0;
-        while (now < length)
-        {
+        while (now < length) {
             auto child = current->GetByKey(word[now]);
-            if (child == nullptr)
-            {
+            if (child == nullptr) {
                 break;
             }
             current = child;
@@ -85,16 +70,13 @@ public:
         return (now == length && current->IsEnd());
     }
 
-    bool startsWith(string prefix)
-    {
+    bool startsWith(string prefix) {
         auto current = root_;
         auto length = prefix.length();
         decltype(length) now = 0;
-        while (now < length)
-        {
+        while (now < length) {
             auto child = current->GetByKey(prefix[now]);
-            if (child == nullptr)
-            {
+            if (child == nullptr) {
                 break;
             }
             current = child;
@@ -106,37 +88,33 @@ public:
 private:
     TrieNode *root_;
 };
-void test1()
-{
+void test1() {
     char c;
     string s;
     using std::cin;
     using std::cout;
     using std::endl;
     auto tree = new Trie();
-    while (cin >> c)
-    {
+    while (cin >> c) {
         cin >> s;
-        switch (c)
-        {
-        case 'i': // insert
-            tree->insert(s);
-            break;
-        case 's': // search
-            cout << tree->search(s) << endl;
-            break;
-        case 'w': // startwith
-            cout << tree->startsWith(s) << endl;
-            break;
-        default:
-            cout << "no matching action";
-            break;
+        switch (c) {
+            case 'i':// insert
+                tree->insert(s);
+                break;
+            case 's':// search
+                cout << tree->search(s) << endl;
+                break;
+            case 'w':// startwith
+                cout << tree->startsWith(s) << endl;
+                break;
+            default:
+                cout << "no matching action";
+                break;
         }
     }
 }
 
-void test2()
-{
+void test2() {
     char c;
     string s;
     using std::cin;
@@ -151,7 +129,6 @@ void test2()
     bool param_3 = obj->startsWith(prefix);
     cout << param_2 << " " << param_3 << endl;
 }
-int main()
-{
+int main() {
     test1();
 }

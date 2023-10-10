@@ -18,8 +18,8 @@
 #  include <sys/stat.h>
 #  include <sys/types.h>
 
-#  ifdef _WRS_KERNEL   // VxWorks7 kernel
-#    include <ioLib.h> // getpagesize
+#  ifdef _WRS_KERNEL    // VxWorks7 kernel
+#    include <ioLib.h>  // getpagesize
 #  endif
 
 #  ifndef _WIN32
