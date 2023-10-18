@@ -8,11 +8,11 @@
 class Solution {};// fill in it
 
 TEST(test0, SAMPLE1) {
-    Solution s;
+    Solution sol;
     // LOG_INFO("SAMPLE1 PASS");
 }
 
 TEST(test0, SAMPLE2) {
-    Solution s;
+    Solution sol;
     // LOG_INFO("SAMPLE2 PASS");
 }
