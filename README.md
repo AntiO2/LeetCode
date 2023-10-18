@@ -70,9 +70,39 @@ Running main() from gmock_main.cc
 
 ### CLion
 
-添加文件后先重新加载CMake项目
+#### 添加文件后先重新加载CMake项目
 
 在运行配置中添加GTest, 目标中选择对应名字的目标。运行即可。
 ![img.png](./blog/assets/img.png)
 
 ![img2.png](./blog/assets/sample_pass.png)
+
+#### 在设置中添加模板
+
+![](./blog/assets/create_tmp.png)
+
+```c++
+/**
+ * @author ${USER}
+ * @date ${DATE}
+ * @see https://leetcode.cn/problems/${PROBLEM_NAME}
+ */
+ 
+#[[#include]]# "fmt/core.h"
+#[[#include]]# "gtest/gtest.h"
+#[[#include]]# "logger.h"
+
+class Solution {};  // fill in it
+
+TEST(test${PROBLEM_ID}, SAMPLE1) {
+  Solution sol;
+}
+
+TEST(test${PROBLEM_ID}, SAMPLE2) {
+  Solution sol;
+}
+```
+
+然后在创建文件中选择新创建的模板，输入题目编号和题目url中的名字，即可创建源文件。
+![](./blog/assets/use_tmp.png)
+
