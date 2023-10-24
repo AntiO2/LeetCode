@@ -10,8 +10,8 @@ class Solution {
  public:
   int maxProfit(int k, std::vector<int>& prices) {
     auto n = prices.size();
-    int profit[k + 1][2]
-              [n];  // profit[a][b][c]表示第a次交易，b = 0表示买入股票，
+    int profit[k + 1][2][n];
+    // profit[a][b][c]表示第a次交易，b = 0表示买入股票，
     // b=1表示卖出股票，c表示第c天。a=0表示未交易的状态。
     memset(profit, 0, sizeof(profit));
     for (size_t j = 1; j <= k; j++) {
