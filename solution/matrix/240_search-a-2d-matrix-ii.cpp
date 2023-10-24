@@ -25,7 +25,8 @@ class Solution {
     if (x1 > x2 || y1 > y2) {
       return false;
     }
-    // LOG_INFO("%s", fmt::format("Search {} {} {} {}", x1, y1, x2, y2).c_str());
+    // LOG_INFO("%s", fmt::format("Search {} {} {} {}", x1, y1, x2,
+    // y2).c_str());
     auto c = matrix[x1][y2];
     if (c == target) {
       return true;

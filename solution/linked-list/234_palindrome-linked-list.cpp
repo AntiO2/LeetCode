@@ -29,8 +29,9 @@ class Solution {
     }
     return prev;
   }
-  // 1 2 3 4 null 共2n个结点。快指针 1+(2x) < 2n ; x= n-1步。慢指针位置在1 + n - 1 = ns
-  // 若共2n+1个结点。比如1 2 3 4 5 null  快指正走n步。位置在2n+1,慢指针位置在1+n,刚好是中心位置。
+  // 1 2 3 4 null 共2n个结点。快指针 1+(2x) < 2n ; x= n-1步。慢指针位置在1 + n -
+  // 1 = ns 若共2n+1个结点。比如1 2 3 4 5 null
+  // 快指正走n步。位置在2n+1,慢指针位置在1+n,刚好是中心位置。
   ListNode* endOfFirstHalf(ListNode* head) {
     auto slowHead = head;
     auto quickHead = head;

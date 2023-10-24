@@ -20,7 +20,7 @@ class Solution {
     for (const auto& interval : intervals) {
       if (exist) {
         if (tmp_right >= interval[0]) {
-          //可以合并
+          // 可以合并
           tmp_right = std::max(tmp_right, interval[1]);
         } else {
           ans.emplace_back(std::vector{tmp_left, tmp_right});

@@ -1,7 +1,8 @@
 /**
  * @author Anti
  * @date 2023/10/21
- * @see https://leetcode.cn/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph
+ * @see
+ * https://leetcode.cn/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph
  */
 
 #include <numeric>

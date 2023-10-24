@@ -17,11 +17,11 @@ class Solution {
 
  public:
   std::string minWindow(std::string s, std::string t) {
-    std::unordered_map<char, int> count_t;  //统计t中的字符数量
+    std::unordered_map<char, int> count_t;  // 统计t中的字符数量
     std::unordered_map<char, int> count_s;  // 统计s中字符串的数量
     std::vector<std::pair<int, int>> possible_ans;  // 子串
     std::deque<sub_info> curr_sub;                  // 当前的子串
-    size_t match_num = 0;                           //已匹配的字符
+    size_t match_num = 0;                           // 已匹配的字符
 
     for (auto& c : t) {
       ++count_t[c];

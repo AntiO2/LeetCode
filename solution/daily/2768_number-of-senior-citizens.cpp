@@ -13,7 +13,7 @@ class Solution {
   int countSeniors(std::vector<std::string>& details) {
     int ans = 0;
     for (auto& s : details) {
-      //      if ((s[11] - '0') * 10 + s[12] - '0' > 60) {
+      // if ((s[11] - '0') * 10 + s[12] - '0' > 60) {
       if (s[11] * 10 + s[12] > 588) {
         ++ans;
       }
