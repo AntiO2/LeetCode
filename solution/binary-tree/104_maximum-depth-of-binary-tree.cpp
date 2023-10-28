@@ -5,51 +5,10 @@
  */
 
 #include <queue>
+#include "anti_binary_tree.h"
 #include "fmt/core.h"
 #include "gtest/gtest.h"
 #include "logger.h"
-#define null 0
-struct TreeNode {
-  int val;
-  TreeNode* left;
-  TreeNode* right;
-  TreeNode() : val(0), left(nullptr), right(nullptr) {}
-  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode* left, TreeNode* right)
-      : val(x), left(left), right(right) {}
-};
-TreeNode* make_tree(std::vector<int>& nodes) {
-  if (nodes.empty() || nodes[0] == null) {
-    return nullptr;
-  }
-  auto node_iter = nodes.begin();
-  auto root = new TreeNode(nodes[0]);
-  ++node_iter;
-  std::queue<TreeNode*> q;
-  q.emplace(root);
-  while (!q.empty() && node_iter != nodes.end()) {
-    auto curr = q.front();
-    q.pop();
-    assert(curr);
-    if (*node_iter == null) {
-      curr->left = nullptr;
-    } else {
-      auto left_node = new TreeNode(*node_iter);
-      curr->left = left_node;
-      q.push(left_node);
-    }
-    ++node_iter;
-    if (*node_iter == null) {
-      curr->right = nullptr;
-    } else {
-      auto right_node = new TreeNode(*node_iter);
-      curr->right = right_node;
-      q.push(right_node);
-    }
-    ++node_iter;
-  }
-  return root;
-}
 class Solution {
  public:
   int maxDepth(TreeNode* root) {

@@ -1,15 +1,23 @@
-# 二叉树测试
+//
+// Created by Anti on 2023/10/28.
+//
 
-模板定义在[anti_binary_tree](./anti_binary_tree.h) 中
-
-## 创建二叉树
-
-[请问[1, null, 2, 3] 在二叉树测试用例中代表什么 - 力扣（LeetCode） - 支持](https://support.leetcode.cn/hc/kb/article/1549360/)
-
-通过数组创建二叉树。
-
-```c++
-TreeNode* make_tree(std::vector<int>& nodes) {
+#ifndef ANTI_BINARY_TREE_H
+#define ANTI_BINARY_TREE_H
+#include <cassert>
+#include <queue>
+#include <vector>
+#define null 0
+struct TreeNode {
+  int val;
+  TreeNode* left;
+  TreeNode* right;
+  TreeNode() : val(0), left(nullptr), right(nullptr) {}
+  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right)
+      : val(x), left(left), right(right) {}
+};
+TreeNode* make_tree(const std::vector<int>& nodes) {
   if (nodes.empty() || nodes[0] == null) {
     return nullptr;
   }
@@ -41,23 +49,7 @@ TreeNode* make_tree(std::vector<int>& nodes) {
   }
   return root;
 }
-```
 
-这里暂时将`null` 定义为了0。
-
-参考[104_maximum-depth-of-binary-tree](./104_maximum-depth-of-binary-tree.cpp)的测试是如何创建二叉树的。
-
-## 判断二叉树相等
-
-这里判断结构以及值是否相等，不判断是否是同一个节点。
-
-
-
-使用参考[226_invert-binary-tree](./226_invert-binary-tree.cpp)中的测试用例。
-
-
-
-```C++
 bool equal_tree(const TreeNode* t1, const TreeNode* t2) {
   auto curr1 = t1, curr2 = t2;
   std::queue<const TreeNode*> q1, q2;
@@ -86,4 +78,4 @@ bool equal_tree(const TreeNode* t1, const TreeNode* t2) {
   }
   return q2.empty();
 }
-```
+#endif  // ANTI_BINARY_TREE_H
