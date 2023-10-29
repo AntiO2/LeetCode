@@ -38,6 +38,9 @@ TreeNode* make_tree(const std::vector<int>& nodes) {
       q.push(left_node);
     }
     ++node_iter;
+    if (node_iter == nodes.end()) {
+      break;
+    }
     if (*node_iter == null) {
       curr->right = nullptr;
     } else {
