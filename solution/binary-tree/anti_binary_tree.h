@@ -5,9 +5,10 @@
 #ifndef ANTI_BINARY_TREE_H
 #define ANTI_BINARY_TREE_H
 #include <cassert>
+#include <climits>
 #include <queue>
 #include <vector>
-#define null 0
+#define null INT_MIN
 struct TreeNode {
   int val;
   TreeNode* left;

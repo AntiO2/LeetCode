@@ -43,7 +43,7 @@ TreeNode* make_tree(std::vector<int>& nodes) {
 }
 ```
 
-这里暂时将`null` 定义为了0。
+这里暂时将`null` 定义为了`INT_MIN`。
 
 参考[104_maximum-depth-of-binary-tree](./104_maximum-depth-of-binary-tree.cpp)的测试是如何创建二叉树的。
 
@@ -51,11 +51,7 @@ TreeNode* make_tree(std::vector<int>& nodes) {
 
 这里判断结构以及值是否相等，不判断是否是同一个节点。
 
-
-
 使用参考[226_invert-binary-tree](./226_invert-binary-tree.cpp)中的测试用例。
-
-
 
 ```C++
 bool equal_tree(const TreeNode* t1, const TreeNode* t2) {
