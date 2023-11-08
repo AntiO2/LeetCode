@@ -1,6 +1,8 @@
 # LeetCode
 
-![Leetcode Stats](https://leetcard.jacoblin.cool/antio2?site=cn&theme=nord&ext=activity&font=Roboto)
+<div style="text-align: center">
+<img src="https://leetcard.jacoblin.cool/antio2?site=cn&theme=nord&ext=activity&font=Roboto" alt="LeetCode Stats">
+</div>
 
 ## 仓库目录
 
