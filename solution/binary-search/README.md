@@ -2,6 +2,18 @@
 
 [34. 在排序数组中查找元素的第一个和最后一个位置 - 力扣（LeetCode）](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-100-liked)
 
+## 定义：
+
+如果有一串序列，总是满足当`i < j`, 有`func(a[j],a[i])==false`。
+
+lower bound是第一个可以插入且保持序列性质的位置。
+
+upper bound是最后一个插入且保持序列性质的位置。
+
+比如有序列`1,3,3,4,5`,此时`func = less<int>{}`, 总是满足后一个数不小于前一个数。
+
+下标1是第一个可以插入3的位置，下标3是最后一个可以插入3的位置。
+
 ## lower bound
 
 如果在默认情况下，查找第一个大于等于target的数。
@@ -10,7 +22,7 @@
 
 但是实际上，我们的compare通常只有小于操作而没有小于等于。
 
-也就是说，要找到最后一个不满足`target<=*iter`的iter的下一个。也就是要求满足`*iter < target`的最后一个的下一个。也就是`cmp(*iter,target)==true`的最后一个的下一个。
+也就是说，要找到最后一个不满足`target<=*iter`的iter的下一个。也就是要求满足`*iter < target`的最后一个的下一个。等于满足`cmp(*iter,target)==true`的最后一个的下一个。
 
 当
 
