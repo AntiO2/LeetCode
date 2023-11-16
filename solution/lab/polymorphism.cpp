@@ -56,8 +56,9 @@ class Empty2 {
 class Empty4 : Empty {
   virtual void func(){};
 };
-class Empty5 : Empty {
-  void func(){};
+class Empty5 : Empty4 {
+  void func() override{};
+  virtual void func2(){};
 };
 TEST(TEST_EMPTY, SAMPLE) {
   Empty e1;
@@ -76,4 +77,25 @@ Empty e2;
 TEST(TEST_EMPTY, SAMPLE2) {
   LOG_INFO("%p", &e1);
   LOG_INFO("%p", &e2);
+}
+
+class VB {};
+class VB1 : public virtual VB {};
+class VB2 : public virtual VB {};
+class VB3 : public VB1, public VB2 {};
+class VB0 {};
+class VB4 : public virtual VB, public virtual VB0 {
+  virtual void foo(){};
+};
+TEST(TEST_VB, SAMPLE) {
+  VB e1;
+  LOG_INFO("%zu", sizeof(e1));
+  VB1 e2{};
+  LOG_INFO("%zu", sizeof(e2));
+  VB2 e3{};
+  LOG_INFO("%zu", sizeof(e3));
+  VB3 e4;
+  LOG_INFO("%zu", sizeof(e4));
+  VB4 vb4;
+  LOG_INFO("%zu", sizeof(vb4));
 }

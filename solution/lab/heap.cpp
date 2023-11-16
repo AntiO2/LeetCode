@@ -12,5 +12,16 @@ TEST(test_heap, SAMPLE1) {
   pq.push(1);
   pq.pop();
 }
-
-TEST(test_heap, SAMPLE2) {}
+void move(std::vector<int>& v) {
+  std::vector tmp{1, 2, 3};
+  LOG_INFO("tmpP: %p", &tmp);
+  LOG_INFO("vp:%p", &v);
+  v = std::move(tmp);
+  LOG_INFO("vp:%p", &v);
+}
+TEST(test_move, SAMPLE2) {
+  std::vector<int> v{};
+  LOG_INFO("vp:%p", &v);
+  move(v);
+  LOG_INFO("vp:%p", &v);
+}
