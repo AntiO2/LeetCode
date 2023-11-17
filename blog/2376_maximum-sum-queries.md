@@ -49,5 +49,5 @@
 
 感觉被
 
-`auto back = stack.size() - 1;`这个坑过无数次了。
+`auto back = stack.size() - 1;`这个gank过无数次了。
 
