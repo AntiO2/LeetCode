@@ -26,5 +26,6 @@ TEST(testrbt, SAMPLE1) {
 }
 
 TEST(rbt, SAMPLE2) {
-  Solution sol;
+  const int&& a = 1;
+  LOG_INFO("%p", &a);
 }
