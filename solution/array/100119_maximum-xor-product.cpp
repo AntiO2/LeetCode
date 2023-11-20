@@ -53,7 +53,7 @@ class Solution {
   }
 }; // maximum-xor-product
 
-TEST(test100119, SAMPLE1) {
+TEST(test2937, SAMPLE1) {
   Solution sol;
   int a = 12;
   int b = 5;
@@ -61,35 +61,35 @@ TEST(test100119, SAMPLE1) {
   EXPECT_EQ(sol.maximumXorProduct(a,b,n),98);
 }
 
-TEST(test100119, SAMPLE2) {
+TEST(test2937, SAMPLE2) {
   Solution sol;
   int a = 6;
   int b = 7;
   int n = 5;
   EXPECT_EQ(sol.maximumXorProduct(a,b,n),930);
 }
-TEST(test100119, SAMPLE3) {
+TEST(test2937, SAMPLE3) {
   Solution sol;
   int a = 1;
   int b = 6;
   int n = 3;
   EXPECT_EQ(sol.maximumXorProduct(a,b,n),12);
 }
-TEST(test100119, SAMPLE4) {
+TEST(test2937, SAMPLE4) {
   Solution sol;
   int a = 0;
   int b = 7;
   int n = 2;
   EXPECT_EQ(sol.maximumXorProduct(a,b,n),12);
 }
-TEST(test100119, SAMPLE5) {
+TEST(test2937, SAMPLE5) {
   Solution sol;
   int a = 2;
   int b = 5;
   int n = 5;
   EXPECT_EQ(sol.maximumXorProduct(a,b,n), 756);
 }
-TEST(test100119, SAMPLE6) {
+TEST(test2937, SAMPLE6) {
   Solution sol;
   long long a = 570713374625622;
   long long b = 553376364476768;
