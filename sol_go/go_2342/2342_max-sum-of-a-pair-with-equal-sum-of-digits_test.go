@@ -1,4 +1,4 @@
-package sol_go
+package go_2342
 
 import (
 	"sort"
