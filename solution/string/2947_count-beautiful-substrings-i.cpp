@@ -66,7 +66,7 @@ class Solution {
   }
 };
 
-TEST(test3, SAMPLE1) {
+TEST(test2947, SAMPLE1) {
   Solution sol;
   std::vector nums{5,4,3,2,1};
   int limit = 1;
@@ -74,7 +74,7 @@ TEST(test3, SAMPLE1) {
   EXPECT_EQ(sol.lexicographicallySmallestArray(nums,limit),ans);
 }
 
-TEST(test3, SAMPLE2) {
+TEST(test2947, SAMPLE2) {
   Solution sol;
   std::vector nums{1,60,34,84,62,56,39,76,49,38};
   int limit = 4;
@@ -82,7 +82,7 @@ TEST(test3, SAMPLE2) {
   EXPECT_EQ(sol.lexicographicallySmallestArray(nums,limit),ans);
 }
 
-TEST(test3, SAMPLE3) {
+TEST(test2947, SAMPLE3) {
   Solution sol;
   std::vector nums{3,2,1};
   int limit = 1;

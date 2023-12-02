@@ -29,10 +29,10 @@ class Solution {
   }
 };  // a
 
-TEST(test1, SAMPLE1) {
+TEST(test2946, SAMPLE1) {
   Solution sol;
 }
 
-TEST(test1, SAMPLE2) {
+TEST(test2946, SAMPLE2) {
   Solution sol;
 }
