@@ -1,0 +1,162 @@
+{
+  "main": {
+    "id": "4672265f00a39f8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "72584b81ebee6f23",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4482a2b51fb7cae3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1954_minimum-garden-perimeter-to-collect-enough-apples.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "623e3beeb1ba7022",
+    "type": "split",
+    "children": [
+      {
+        "id": "31807cfd8671586a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4c2295770e22e62f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "31c3dac8d5713e17",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "647ba502c929a571",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4d6341f3f69bebbb",
+    "type": "split",
+    "children": [
+      {
+        "id": "98ed102e3f38ab73",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28b43b2f783f2917",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1954_minimum-garden-perimeter-to-collect-enough-apples.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec3a53d026f61311",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "1954_minimum-garden-perimeter-to-collect-enough-apples.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cdd37e767644c5db",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "95dc5b4227e16a8a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "1954_minimum-garden-perimeter-to-collect-enough-apples.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "4482a2b51fb7cae3",
+  "lastOpenFiles": [
+    "1488_avoid-flood-in-the-city.md",
+    "901_online-stock-span.md",
+    "1954_minimum-garden-perimeter-to-collect-enough-apples.md",
+    "2034_stock-price-fluctuation.md",
+    "2251_number-of-flowers-in-full-bloom.md",
+    "2376_maximum-sum-queries.md",
+    "2512_reward-top-k-students.md",
+    "2731_movement-of-robots.md",
+    "2758_split-with-minimum-sum.md",
+    "128_longest-consecutive-sequence.md"
+  ]
+}
