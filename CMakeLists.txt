@@ -16,7 +16,7 @@ endif ()
 # 设置 CMake 构建类型为 Debug
 set(CMAKE_BUILD_TYPE Debug)
 
-add_subdirectory(solution) # C++解答
+add_subdirectory(leetcode_cpp) # LC C++解答
 add_subdirectory(lab)
 
 include_directories(deps)
