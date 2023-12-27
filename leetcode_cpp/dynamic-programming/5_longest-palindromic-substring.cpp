@@ -8,7 +8,34 @@
 #include "gtest/gtest.h"
 #include "logger.h"
 
+// DP
 class Solution {
+ public:
+  std::string longestPalindrome(std::string s) {
+    if(s.empty()) {
+      return "";
+    }
+    auto n = s.size();
+    std::vector<std::vector<int>> dp(n,std::vector<int>(n));
+    int max = 1;
+    int ans_left = 0;
+    for(int i = 0; i < n; i++) {
+      dp[i][i] = 1;
+      for(int j = i-1; j >=0; j--) {
+        if(s[j]==s[i]&& (j==i-1||dp[j+1][i-1])) {
+          dp[j][i] = dp[j+1][i-1] + 2;
+          if(dp[j][i] > max) {
+            max = dp[j][i];
+            ans_left = j;
+          }
+        }
+      }
+    }
+    return s.substr(ans_left,max);
+  }
+};
+// 中心扩散法
+class Solution2 {
  public:
   std::string longestPalindrome(std::string s) {
     int max = 0;
@@ -52,4 +79,7 @@ TEST(test5, SAMPLE1) {
 
 TEST(test5, SAMPLE2) {
   Solution sol;
+  std::string s = "aacabdkacaa";
+  std::string ans = "aca";
+  EXPECT_EQ(sol.longestPalindrome(s), ans);
 }
