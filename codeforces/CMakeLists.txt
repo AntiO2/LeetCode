@@ -9,7 +9,7 @@ message("start to build codeforces solution targets")
 foreach (SOLUTION_SOURCE ${SOLUTION_SOURCES})
     get_filename_component(solution_filename ${SOLUTION_SOURCE} NAME)
     string(REPLACE ".cpp" "" solution_name ${solution_filename})
-    
+
     string(CONCAT solution_name "CF" ${solution_name})
     message("detect solution: ${solution_name}")
     add_executable(${solution_name} EXCLUDE_FROM_ALL ${SOLUTION_SOURCE})
