@@ -16,8 +16,10 @@ endif ()
 # 设置 CMake 构建类型为 Debug
 set(CMAKE_BUILD_TYPE Debug)
 
+add_subdirectory(codeforces)
 add_subdirectory(leetcode_cpp) # LC C++解答
 add_subdirectory(lab)
+add_subdirectory(deps) # 第三方库
 
 include_directories(deps)
-add_subdirectory(deps) # 第三方库
+
