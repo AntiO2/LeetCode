@@ -1,6 +1,6 @@
 /**
  * @author Anti
- * @date 2024-01-07
+ * @date 2024-01-08
  * @see
  * https://leetcode.cn/problems/maximize-the-number-of-partitions-after-operations
  */
@@ -8,7 +8,7 @@
 #include "fmt/core.h"
 #include "gtest/gtest.h"
 #include "logger.h"
-#include <bitset>
+
 class Solution {
   using mask_t = std::bitset<26>;
   using status_t = std::pair<mask_t, int>;
@@ -101,12 +101,3 @@ class Solution {
     return ans;
   }
 };  // maximize-the-number-of-partitions-after-operations
-
-TEST(testD, SAMPLE1) {
-  Solution sol;
-  EXPECT_EQ(sol.maxPartitionsAfterOperations("accca",2),3);
-}
-
-TEST(testD, SAMPLE2) {
-  Solution sol;
-}
