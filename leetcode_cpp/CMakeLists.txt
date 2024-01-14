@@ -31,3 +31,6 @@ foreach (SOLUTION_SOURCE ${SOLUTION_SOURCES})
     #            COMMAND ${solution_name}
     #            )
 endforeach ()
+
+add_subdirectory(array)
+add_subdirectory(string)
