@@ -17,6 +17,7 @@ endif ()
 set(CMAKE_BUILD_TYPE Debug)
 
 add_subdirectory(codeforces)
+add_subdirectory(codewars)
 add_subdirectory(leetcode_cpp) # LC C++解答
 add_subdirectory(lab)
 add_subdirectory(deps) # 第三方库

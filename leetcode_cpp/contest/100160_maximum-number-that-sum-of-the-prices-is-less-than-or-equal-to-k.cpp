@@ -10,59 +10,39 @@
 #include "logger.h"
 
 class Solution {
- private:
-  long long tot(int i,int x) {
-    long long cnt;
-    if(i==1&&x==1) {
-      return 1;
-    }
-    long long unit = (1<<(i-1))>>1;
-    auto remain = i/x;
-    cnt =  remain*unit;
-    if(i%x==0) {
-      cnt+=unit;
-    }
-    return cnt;
-  }
-  long long tot2(int i,int x) {
-    // 求i位的value
-    long long cnt;
-    long long unit =  (1<<(i-1));
-    auto remain = i/x;
-    cnt =  remain*unit;
-    return cnt;
-  }
  public:
-  long long findMaximumNumber(long long k, int x) {
-    int i = 0;
-    long long ans = 0;
-    long long value = 0;
-    while(true) {
-      i++; // 目前判断第i位。
-      long long cnt = tot(i,x);
-      if(value + cnt < k) {
-        value +=cnt;
-        continue ;
+  long long check(long long mid,int x)
+  {
+    if(mid==0)return 0;
+    if(mid==1&&x==1)return 1;
+    if(mid==1&&x!=1)return 0;
+    int mw; // 最高位数。
+    for(int i=0;i<64;i++)
+      if(mid>>i&1) {
+        mw=i;
       }
-      // value <= k, value + cnt > k;
-      ans = 1<<(i-1);
-      auto flag = ans%x;
-      while (value<k) {
-        for(int j = 1; j < i; j++) {
-          auto cnt2 = tot2(j,x);
-          if(value+ cnt2<k) {
-            value+= cnt2;
-            continue ;
-          }
-          // 第j位固定为0.
-          if(value+ tot2())
-        }
-      }
-      return
-    }
+    long long res=0;
+    res=mw/x;
+    res=res*(1ll<<(mw-1));
+    if((mw+1)%x==0)res=res+(mid-(1ll<<mw)+1);
+    long long y=0;
+    y=mid-(1ll<<mw);
+    res+=check(y,x);
+    return res;
   }
-};  // maximum-number-that-sum-of-the-prices-is-less-than-or-equal-to-k
-
+  long long findMaximumNumber(long long k, int x) {
+    long long l=1,r=k*(1<<x);
+    while(l<r)
+    {
+      long long mid=(l+r+1)>>1;
+      if(check(mid,x)<=k) {
+        l=mid;
+      }
+      else r=mid-1;
+    }
+    return l;
+  }
+};
 TEST(test100160, SAMPLE1) {
   Solution sol;
 }
