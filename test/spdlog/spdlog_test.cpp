@@ -16,7 +16,7 @@ int main() {
 
     err_logger->set_level(spdlog::level::debug); 
     err_logger->set_pattern("%^[%l] [%T.%e]%$ [thread %t] [(%s):%!:%#] %v"); // 设置全局打印的格式。 感觉这样比较舒服
-    err_logger->debug("jugg"); // debug level还不知道怎么用。。感觉有问题。。。
+    err_logger->debug("jugg"); // debug level还不知道怎么用。。感觉有问题。。。 设置的pattern，macro没用
     spdlog::set_default_logger(err_logger); // 设置全局logger
     // spdlog::set_level(spdlog::level::debug); // 好像没用，这里。
     SPDLOG_INFO("dota2"); // 使用全局logger

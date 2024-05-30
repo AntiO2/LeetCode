@@ -21,6 +21,8 @@
 |`%^...%$`|这两个中间是有颜色的|
 
 ``` 
+./test/spdlog/spdlog_test 1>log 2>log.wf
+
 lizinuo@MacBook-Pro build % cat log.wf
 [debug] [15:01:23.371] [thread 590171] [()::] jugg
 [info] [15:01:23.371] [thread 590171] [(spdlog_test.cpp):main:22] dota2
