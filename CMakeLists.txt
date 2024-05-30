@@ -21,6 +21,7 @@ add_subdirectory(codewars)
 add_subdirectory(leetcode_cpp) # LC C++解答
 add_subdirectory(lab)
 add_subdirectory(deps) # 第三方库
+add_subdirectory(test) # 实验
 
 include_directories(deps)
 

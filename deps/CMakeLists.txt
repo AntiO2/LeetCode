@@ -2,3 +2,8 @@ ADD_SUBDIRECTORY(googletest)
 
 ADD_SUBDIRECTORY(fmt)
 INCLUDE_DIRECTORIES(fmt/include)
+
+
+### log lib
+ADD_SUBDIRECTORY(spdlog)
+INCLUDE_DIRECTORIES(spdlog/include)

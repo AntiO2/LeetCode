@@ -1,0 +1,33 @@
+测试使用spdlog
+
+
+主要试了下怎么设置pattern。
+
+目前我调的:
+```
+"%^[%l] [%T.%e]%$ [thread %t] [(%s):%!:%#] %v"
+```
+
+| 符号 | 含义 |
+|---|---|
+| %l | level |
+| %T | 时分秒 |
+|%e| 毫秒|
+| %t | tid |
+|%s| source |
+|%!| function |
+|%#| 第几行|
+|%v| 信息|
+|`%^...%$`|这两个中间是有颜色的|
+
+``` 
+lizinuo@MacBook-Pro build % cat log.wf
+[debug] [15:01:23.371] [thread 590171] [()::] jugg
+[info] [15:01:23.371] [thread 590171] [(spdlog_test.cpp):main:22] dota2
+[warning] [15:01:23.371] [thread 590171] [(spdlog_test.cpp):main:24] 1999
+[critical] [15:01:23.371] [thread 590171] [(spdlog_test.cpp):main:25] genshin impact
+[info] [15:01:23.371] [thread 590171] [(test_function.cpp):add:6] add 1 and 2
+[info] [15:01:23.371] [thread 590171] [(spdlog_test.cpp):subtest:31] result is 3
+```
+
+已知的问题：设置全局debug level没用，但是往上设置有用。
