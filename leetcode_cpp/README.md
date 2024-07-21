@@ -103,3 +103,6 @@ TEST(test${PROBLEM_ID}, SAMPLE2) {
 [leetcode template](../docs/vscode_temp.json)
 
 在编辑中键入`lc`
+
+
+![lc](../blog/assets/vscode_snippet.png)
