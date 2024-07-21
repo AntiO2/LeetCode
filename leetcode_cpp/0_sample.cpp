@@ -1,38 +1,49 @@
 /**
- * @author Anti
- * @date 2023/9/1
+ * @author AntiO2
+ * @date 2024/07/21
  * @see https://leetcode.cn/problems/sample
  */
 
-#include "fmt/core.h"
 #include "gtest/gtest.h"
-#include "logger.h"
-
+#include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/sinks/stdout_sinks.h"
+#include "spdlog/spdlog.h"
+#define INFO(...) SPDLOG_INFO(__VA_ARGS__)
+#define ERROR(...) SPDLOG_ERROR(__VA_ARGS__)
 class Solution {
+   public:
+    void test() {
+        SPDLOG_INFO("TEST SOL");
+        SPDLOG_ERROR("Error");
+    }
+};
 
- public:
-  void test() { LOG_INFO("TEST SOL"); }
-};  // fill in it
+class LeetCodeTest : public ::testing::Test {
+   protected:
+    void SetUp() override;
+    std::shared_ptr<spdlog::logger> err_logger;
+};
 
-TEST(test0, SAMPLE1) {
-  Solution sol;
+TEST_F(LeetCodeTest, 0_test1) {
+    Solution sol;
+    sol.test();
 }
 
-TEST(test0, SAMPLE2) {
-  Solution sol;
+TEST_F(LeetCodeTest, 0_test2) {
+    Solution sol;
+    INFO("test2");
+    ERROR("test 2 error");
 }
 
-TEST(test0, DISABLED_ASAN_TEST) {
-  // 栈内存越界
-  int array[3]{0, 1, 2};
-  LOG_INFO("%d", array[3]);
-  // 堆内存越界
-  auto stack_array = new int[3];
-  LOG_INFO("%d", stack_array[3]);
-
-  auto memory_leak = new int[3];  // 内存泄露
-  // delete[] memory_leak;
-  auto s = new Solution();
-  delete s;
-  s->test();  // use after free;
+void LeetCodeTest::SetUp() {
+    // 检查 logger 是否已经存在，避免重复创建
+    err_logger = spdlog::get("stderr");
+    if (!err_logger) {
+        // 创建并配置 stderr 颜色日志记录器
+        err_logger = spdlog::stderr_color_mt("stderr");
+        err_logger->set_pattern(
+            "%^[%l]\t[%T.%e]%$\t[%s:%!:%#]\t%v");  // 设置日志格式
+        // 设置默认日志记录器
+        spdlog::set_default_logger(err_logger);
+    }
 }

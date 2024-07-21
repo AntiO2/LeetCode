@@ -23,7 +23,7 @@ foreach (SOLUTION_SOURCE ${SOLUTION_SOURCES})
             )
 
     target_link_libraries(${solution_name} gtest gmock_main fmt)
-
+    target_link_libraries(${solution_name} spdlog::spdlog)
     # Set test target properties and dependencies.
     #    set_target_properties(${solution_name}
     #            PROPERTIES

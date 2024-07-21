@@ -98,3 +98,8 @@ TEST(test${PROBLEM_ID}, SAMPLE2) {
 然后在创建文件中选择新创建的模板，输入题目编号和题目url中的名字，即可创建源文件。
 ![](../blog/assets/use_tmp.png)
 
+### VSCODE
+添加用户代码片段：
+[leetcode template](../docs/vscode_temp.json)
+
+在编辑中键入`lc`

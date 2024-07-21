@@ -5,6 +5,7 @@ message(${CMAKE_SYSTEM_PROCESSOR})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
+set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 if (CMAKE_SYSTEM_PROCESSOR MATCHES "x86")
     # 如果系统是 x86，则启用特定的编译选项
     message("Enable AddressSanitizer")
