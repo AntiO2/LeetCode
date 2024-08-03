@@ -22,7 +22,7 @@ foreach (SOLUTION_SOURCE ${SOLUTION_SOURCES})
             TIMEOUT 120
             )
 
-    target_link_libraries(${solution_name} gtest gmock_main fmt)
+    target_link_libraries(${solution_name} gtest gmock_main)
     target_link_libraries(${solution_name} spdlog::spdlog)
     # Set test target properties and dependencies.
     #    set_target_properties(${solution_name}
@@ -31,6 +31,3 @@ foreach (SOLUTION_SOURCE ${SOLUTION_SOURCES})
     #            COMMAND ${solution_name}
     #            )
 endforeach ()
-
-add_subdirectory(array)
-add_subdirectory(string)
