@@ -31,7 +31,7 @@
             "",
             "TEST_F(LeetCodeTest, $1_test1) {",
             "    Solution sol;",
-            "    sol.test();",
+            "    // sol.test();",
             "}",
             "",
             "TEST_F(LeetCodeTest, $1_test2) {",
