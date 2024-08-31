@@ -59,7 +59,7 @@ TEST_F(LeetCodeTest, 3153_test1) {
     Solution sol;
     // sol.test();
     std::vector<int> nums{10,10,10,10};
-    EXPECT_EQ(sol.);
+    EXPECT_EQ(sol.sumDigitDifferences(nums), 0);
 }
 
 TEST_F(LeetCodeTest, 3153_test2) {
