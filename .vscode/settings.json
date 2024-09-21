@@ -91,5 +91,6 @@
         "locale": "cpp",
         "queue": "cpp",
         "stack": "cpp"
-    }
+    },
+    "debug.inlineValues": "on"
 }

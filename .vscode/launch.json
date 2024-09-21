@@ -14,8 +14,21 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "Make Bin"
+            "osx": {
+                "MIMode": "lldb",
+            },
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "preLaunchTask": "Make Bin",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "envFile": "${workspaceFolder}/.vscode/debug.env"
         }
     ]
 }
