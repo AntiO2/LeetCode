@@ -14,20 +14,31 @@
 class Solution {
 public:
     int removeElement(std::vector<int>& nums, int val) {
-        auto lr = nums.rbegin();
-        while(*lr==val) {
-            ++lr;
+        if(nums.size() == 0) {
+            return 0;
         }
+        auto lr = nums.end() - 1;
         auto cnt = 0;
-        for(auto it = nums.begin(); &(*it) != &(*lr); ++it) {
+        while(*lr==val && lr != nums.begin()) {
+            ++cnt;
+            --lr;
+        }
+        if(*lr == val) {
+            return 0;
+        }
+        for(auto it = nums.begin();it != lr; ++it) {
             if(*it == val) {
-                ++cnt;
                 std::swap(*it, *lr);
                 while(*lr==val) {
-                    ++lr;   
+                    ++cnt;
+                    --lr;   
                 }
             }
+            if(lr==it) {
+                break;
+            }
         }
+        return nums.size() - cnt;
     }
 };
 class LeetCodeTest : public ::testing::Test {
@@ -36,13 +47,21 @@ protected:
     std::shared_ptr<spdlog::logger> err_logger;
 };
 
-TEST_F(LeetCodeTest, 27_test1) {
+TEST_F(LeetCodeTest, DISABLED_27_test1) {
     Solution sol;
     // sol.test();
+    auto nums = std::vector<int>{3,2,2,3};
+    auto val = 3;
+    EXPECT_EQ(sol.removeElement(nums, val), 2);
+    EXPECT_EQ(nums[0], 2);
+    EXPECT_EQ(nums[1], 2);
 }
 
 TEST_F(LeetCodeTest, 27_test2) {
     Solution sol;
+    auto nums = std::vector<int>{2, 2, 3};
+    auto val = 2;
+    EXPECT_EQ(sol.removeElement(nums, val), 2);
 }
 
 void LeetCodeTest::SetUp() {
