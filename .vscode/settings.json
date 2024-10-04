@@ -91,7 +91,17 @@
         "locale": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "barrier": "cpp",
+        "cinttypes": "cpp",
+        "coroutine": "cpp",
+        "csetjmp": "cpp",
+        "cuchar": "cpp",
+        "latch": "cpp",
+        "scoped_allocator": "cpp",
+        "shared_mutex": "cpp",
+        "syncstream": "cpp",
+        "valarray": "cpp"
     },
     "debug.inlineValues": "on"
 }
