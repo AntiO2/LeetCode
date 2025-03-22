@@ -1,6 +1,5 @@
-package array;
+package array.s825_friends_of_appropriate_ages;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class FriendsOfAppropriateAges {
