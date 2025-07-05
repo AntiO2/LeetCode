@@ -1,4 +1,4 @@
-package string.s3340_check_balanced_string;
+package top.antio2.string.s3340_check_balanced_string;
 
 class Solution {
     public boolean isBalanced(String num) {

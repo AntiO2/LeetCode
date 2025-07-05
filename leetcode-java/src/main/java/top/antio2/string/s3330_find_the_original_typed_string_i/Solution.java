@@ -1,4 +1,4 @@
-package string.s3330_find_the_original_typed_string_i;
+package top.antio2.string.s3330_find_the_original_typed_string_i;
 
 class Solution {
     public int possibleStringCount(String word) {

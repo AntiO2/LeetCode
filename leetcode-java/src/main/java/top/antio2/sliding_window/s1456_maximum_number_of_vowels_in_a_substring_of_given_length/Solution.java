@@ -1,4 +1,4 @@
-package sliding_window.s1456_maximum_number_of_vowels_in_a_substring_of_given_length;
+package top.antio2.sliding_window.s1456_maximum_number_of_vowels_in_a_substring_of_given_length;
 
 class Solution {
     private boolean isVowel(char c) {

@@ -1,4 +1,4 @@
-package greedy.s1328_break_a_palindrome;
+package top.antio2.greedy.s1328_break_a_palindrome;
 
 class Solution {
     public String breakPalindrome(String palindrome) {

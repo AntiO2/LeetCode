@@ -103,5 +103,6 @@
         "syncstream": "cpp",
         "valarray": "cpp"
     },
-    "debug.inlineValues": "on"
+    "debug.inlineValues": "on",
+    "maven.view": "flat"
 }

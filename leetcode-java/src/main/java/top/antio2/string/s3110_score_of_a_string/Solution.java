@@ -1,4 +1,4 @@
-package string.s3110_score_of_a_string;
+package top.antio2.string.s3110_score_of_a_string;
 
 class Solution {
     public int scoreOfString(String s) {

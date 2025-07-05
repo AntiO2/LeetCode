@@ -1,11 +1,8 @@
-package array.s825_friends_of_appropriate_ages;
+package top.antio2.array.s825_friends_of_appropriate_ages;
 
 import java.util.Arrays;
 
-public class FriendsOfAppropriateAges {
-}
-
-class Solution {
+public class Solution {
     public int numFriendRequests(int[] ages) {
         int ans = 0;
         int n = ages.length;

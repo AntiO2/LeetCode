@@ -1,4 +1,4 @@
-package array.s2642_row_with_maximum_ones;
+package top.antio2.array.s2642_row_with_maximum_ones;
 
 class Solution {
     public int[] rowAndMaximumOnes(int[][] mat) {

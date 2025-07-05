@@ -1,6 +1,5 @@
-package dynamic_programming.s132_palindrome_partitioning_ii;
+package top.antio2.dynamic_programming.s132_palindrome_partitioning_ii;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 class Solution {

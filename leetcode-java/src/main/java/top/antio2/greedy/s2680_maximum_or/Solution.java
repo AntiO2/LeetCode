@@ -1,4 +1,4 @@
-package greedy.s2680_maximum_or;
+package top.antio2.greedy.s2680_maximum_or;
 
 class Solution {
     public long maximumOr(int[] nums, int k) {
