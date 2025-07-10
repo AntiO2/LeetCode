@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Solution",
+            "request": "launch",
+            "mainClass": "top.antio2.greedy.s3440.Solution",
+            "projectName": "leetcode-java"
+        },
+        {
             "name": "(lldb) LeetCode CMake 编译 & 启动",
             "type": "cppdbg",
             "request": "launch",
@@ -15,7 +22,7 @@
             "environment": [],
             "externalConsole": false,
             "osx": {
-                "MIMode": "lldb",
+                "MIMode": "lldb"
             },
             "linux": {
                 "MIMode": "gdb"
