@@ -101,7 +101,8 @@
         "scoped_allocator": "cpp",
         "shared_mutex": "cpp",
         "syncstream": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "print": "cpp"
     },
     "debug.inlineValues": "on",
     "maven.view": "flat"
